@@ -40,33 +40,13 @@ const images = [
     id: 8,
     src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
     alt: 'Arte 8'
-  },
-  {
-    id: 9,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
-    alt: 'Arte 9'
-  },
-  {
-    id: 10,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
-    alt: 'Arte 10'
-  },
-  {
-    id: 11,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
-    alt: 'Arte 11'
-  },
-  {
-    id: 12,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
-    alt: 'Arte 12'
   }
 ]
 
 export default function ArtePage() {
   return (
     <main className="min-h-screen">
-      <section className="py-8 px-4">
+      <section className="py-8">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-3xl font-bold text-center mb-8">Arte</h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">

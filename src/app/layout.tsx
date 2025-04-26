@@ -1,14 +1,18 @@
 import "./globals.css";
 
 import Header from "@/components/Header";
-import { Inter } from "next/font/google";
 import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: ['100', '300', '400', '500', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: "Model Art - Portfolio Fotográfico",
-  description: "Portfolio profesional de fotografía y arte",
+  title: "Model Art",
+  description: "Fotografía y Arte",
 };
 
 export default function RootLayout({
@@ -18,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <Header />
         {children}
       </body>

@@ -45,7 +45,7 @@ const images = [
 
 export default function PartnerPage() {
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen">
       <section className="py-8 px-4">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-3xl font-bold text-center mb-8">Partner</h1>
