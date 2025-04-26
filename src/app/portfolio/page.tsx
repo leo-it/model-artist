@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import PageContainer from '@/components/PageContainer'
 
 const sections = [
   {
@@ -22,28 +23,37 @@ const sections = [
   }
 ]
 
+const PortfolioSection = ({ section }: { section: typeof sections[0] }) => (
+  <Link 
+    href={section.href}
+    className="relative w-full h-[300px] md:h-[calc(100vh-200px)] group overflow-hidden"
+  >
+    <Image
+      src={section.image}
+      alt={section.title}
+      fill
+      className="object-cover transition-transform duration-300 group-hover:scale-110"
+    />
+    <div className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+      <h2 className="text-white text-4xl font-bold">{section.title}</h2>
+    </div>
+  </Link>
+)
+
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen">
-      <div className="flex flex-row md:flex-row h-screen">
-        {sections.map((section) => (
-          <Link 
-            key={section.id} 
-            href={section.href}
-            className="relative w-full md:w-1/3 h-1/3 md:h-full group overflow-hidden"
-          >
-            <Image
-              src={section.image}
-              alt={section.title}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-              <h2 className="text-white text-4xl font-bold">{section.title}</h2>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <PageContainer>
+        <div className="pt-[100px]">
+          <h1 className="text-4xl md:text-6xl font-bold text-left">Trabajo reciente</h1>
+        </div>
+        
+        <div className="pt-8 flex flex-col md:flex-row gap-2.5">
+          {sections.map((section) => (
+            <PortfolioSection key={section.id} section={section} />
+          ))}
+        </div>
+      </PageContainer>
     </main>
   )
 } 

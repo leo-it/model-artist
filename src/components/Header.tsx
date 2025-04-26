@@ -30,10 +30,10 @@ export default function Header() {
         {/* Menú desktop */}
         {!isMobile && (
           <div className="flex items-center [&>*:not(:last-child)]:mr-[70px]">
-            <Link href="/" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Home</Link>
-            <Link href="/portfolio" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">portfolio</Link>
-            <Link href="/moda" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Moda</Link>
-            <Link href="/partner" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Partner</Link>
+            <Link href="/" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Inicio</Link>
+            <Link href="/portfolio" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Portfolio</Link>
+            <Link href="/about" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Acerca de mi</Link>
+            <Link href="/contact" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Contacto</Link>
             <a
               href="https://www.instagram.com/chiara.model/"
               target="_blank"
@@ -58,7 +58,7 @@ export default function Header() {
 
       {/* Menú móvil */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[50] bg-black ">
+        <div className="fixed inset-0 z-[50] bg-black">
           <nav className="relative h-full flex flex-col items-center justify-center">
             <div className="space-y-12 text-center flex flex-col">
               <Link 
@@ -66,7 +66,7 @@ export default function Header() {
                 className="text-white text-3xl font-light hover:text-gray-300 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                Inicio
               </Link>
               <Link 
                 href="/portfolio" 
@@ -76,18 +76,18 @@ export default function Header() {
                 Portfolio
               </Link>
               <Link 
-                href="/moda" 
+                href="/about" 
                 className="text-white text-3xl font-light hover:text-gray-300 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Moda
+                Acerca de mi
               </Link>
               <Link 
-                href="/partner" 
+                href="/contact" 
                 className="text-white text-3xl font-light hover:text-gray-300 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Partner
+                Contacto
               </Link>
               <a
                 href="https://www.instagram.com/chiara.model/"
