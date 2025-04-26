@@ -48,7 +48,6 @@ export default function PartnerPage() {
     <main className="min-h-screen">
       <section className="py-8 px-4">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-3xl font-bold text-center mb-8">Partner</h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {images.map((image) => (
               <div key={image.id} className="relative aspect-square overflow-hidden group">

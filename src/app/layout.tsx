@@ -2,13 +2,6 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({
-  weight: ['100', '300', '400', '500', '700', '900'],
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: "Model Art",
@@ -22,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={roboto.className}>
+      <body className="font-sans">
         <Header />
         {children}
       </body>

@@ -26,12 +26,12 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 h-[110px] w-full bg-transparent z-50">
-      <nav className="h-full flex items-center justify-end px-8 mr-[70px]">
+      <nav className="h-full flex items-center justify-end px-8 md:mr-[70px]">
         {/* Menú desktop */}
         {!isMobile && (
           <div className="flex items-center [&>*:not(:last-child)]:mr-[70px]">
             <Link href="/" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Home</Link>
-            <Link href="/portfolio-" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">portfolio-</Link>
+            <Link href="/portfolio" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">portfolio</Link>
             <Link href="/moda" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Moda</Link>
             <Link href="/partner" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Partner</Link>
             <a
@@ -48,7 +48,7 @@ export default function Header() {
         {/* Botón menú para móvil */}
         {isMobile && (
           <button
-            className="text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+            className="text-white p-2 hover:bg-white/10 rounded-full transition-colors z-[100]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={48} /> : <Menu size={48} />}
@@ -57,9 +57,9 @@ export default function Header() {
       </nav>
 
       {/* Menú móvil */}
-      {isMobile && isMenuOpen && (
-        <div className="fixed inset-0 z-[100] bg-black">
-          <nav className="relative h-full flex flex-col items-center bg-black justify-center">
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-[50] bg-black ">
+          <nav className="relative h-full flex flex-col items-center justify-center">
             <div className="space-y-12 text-center flex flex-col">
               <Link 
                 href="/" 
