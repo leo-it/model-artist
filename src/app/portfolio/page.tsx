@@ -43,12 +43,12 @@ const PortfolioSection = ({ section }: { section: typeof sections[0] }) => (
 export default function PortfolioPage() {
   return (
     <main className="min-h-screen">
-      <PageContainer>
-        <div className="pt-[100px]">
-          <h1 className="text-4xl md:text-6xl font-bold text-left">Trabajo reciente</h1>
-        </div>
-        
-        <div className="pt-8 flex flex-col md:flex-row gap-2.5">
+      <PageContainer
+        title="Trabajo reciente"
+        paddingTop="pt-[100px]"
+        paddingBottom="pt-8"
+      >
+        <div className="flex flex-col md:flex-row gap-2.5">
           {sections.map((section) => (
             <PortfolioSection key={section.id} section={section} />
           ))}
