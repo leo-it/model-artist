@@ -1,67 +1,26 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
 import Image from 'next/image'
 import ImageModal from '@/components/ImageModal'
-import Papa from 'papaparse'
-
-interface ParsedResult {
-  data: Array<{
-    ID: string;
-    Nombre: string;
-    URL: string;
-    Clase: string;
-  }>;
-}
+import { useState } from 'react'
 
 const images = [
   {
     id: 1,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
+    src: '/gallery/partner/IMG_7091.JPG',
     alt: 'Partner 1',
     className: ''
   },
   {
     id: 2,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
+    src: '/gallery/partner/IMG_7089.JPG',
     alt: 'Partner 2',
     className: 'vertical'
   },
   {
     id: 3,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
+    src: '/gallery/partner/IMG_7084.JPG',
     alt: 'Partner 3',
-    className: 'horizontal'
-  },
-  {
-    id: 4,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
-    alt: 'Partner 4',
-    className: ''
-  },
-  {
-    id: 5,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
-    alt: 'Partner 5',
-    className: 'big'
-  },
-  {
-    id: 6,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
-    alt: 'Partner 6',
-    className: ''
-  },
-  {
-    id: 7,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
-    alt: 'Partner 7',
-    className: 'vertical'
-  },
-  {
-    id: 8,
-    src: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg',
-    alt: 'Partner 8',
     className: ''
   }
 ]
@@ -69,23 +28,9 @@ const images = [
 export default function PartnerPage() {
   const [selectedImage, setSelectedImage] = useState<typeof images[0] | null>(null)
 
-   /*  async function getLinks() {
-      const response = await fetch('https://docs.google.com/spreadsheets/d/1agWuGKkpmyz-Jr6rqgjV1tr6rT4FOPqZBuuEbcqa0Qs/export?format=csv')
-      const data = await response.text()
-      const parsedData = await new Promise<ParsedResult>((resolve, reject) => {
-        Papa.parse(data, {
-          header: true,
-          complete: resolve,
-          error: reject
-        })
-      })
-      return parsedData
-    }
-    getLinks()
- */
   return (
-    <main className="min-h-screen p-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-[300px] max-w-[1200px] mx-auto grid-flow-dense">
+    <main className="h-full pt-24 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-[400px] max-w-[1200px] mx-auto grid-flow-dense">
         {images.map((image) => (
           <div
             key={image.id}

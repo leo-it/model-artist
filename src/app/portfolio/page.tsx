@@ -7,19 +7,19 @@ const sections = [
     id: 1,
     title: 'Arte',
     href: '/arte',
-    image: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg'
+    image: '/gallery/portfolio/art.JPG'
   },
   {
     id: 2,
     title: 'Moda',
     href: '/moda',
-    image: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg'
+    image: '/gallery/portfolio/mod.JPG'
   },
   {
     id: 3,
     title: 'Partner',
     href: '/partner',
-    image: 'https://s0.smartresize.com/wallpaper/740/728/HD-wallpaper-cute-girl-art-girls-model-cute.jpg'
+    image: '/gallery/portfolio/partner.JPG'
   }
 ]
 
