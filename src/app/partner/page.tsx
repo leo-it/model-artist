@@ -1,8 +1,19 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 import Image from 'next/image'
 import ImageModal from '@/components/ImageModal'
-import { useState } from 'react'
+import Papa from 'papaparse'
+
+interface ParsedResult {
+  data: Array<{
+    ID: string;
+    Nombre: string;
+    URL: string;
+    Clase: string;
+  }>;
+}
 
 const images = [
   {
@@ -58,6 +69,20 @@ const images = [
 export default function PartnerPage() {
   const [selectedImage, setSelectedImage] = useState<typeof images[0] | null>(null)
 
+   /*  async function getLinks() {
+      const response = await fetch('https://docs.google.com/spreadsheets/d/1agWuGKkpmyz-Jr6rqgjV1tr6rT4FOPqZBuuEbcqa0Qs/export?format=csv')
+      const data = await response.text()
+      const parsedData = await new Promise<ParsedResult>((resolve, reject) => {
+        Papa.parse(data, {
+          header: true,
+          complete: resolve,
+          error: reject
+        })
+      })
+      return parsedData
+    }
+    getLinks()
+ */
   return (
     <main className="min-h-screen p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-[300px] max-w-[1200px] mx-auto grid-flow-dense">
