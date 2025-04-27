@@ -1,7 +1,9 @@
+'use client'
+
 import Footer from '@/components/Footer'
 import PageContainer from '@/components/PageContainer'
 
-export default function Contact() {
+export default function ContactPage() {
   return (
     <PageContainer
       title="Contacto"

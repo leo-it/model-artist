@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="es">
-      <body className="font-sans">
+      <body className="bg-gradient-to-b from-[#0f0a1a] via-[#1a1029] to-[#2a1f3d] font-sans">
         <Header />
         {children}
       </body>
