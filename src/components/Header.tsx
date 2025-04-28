@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import Link from 'next/link'
@@ -35,14 +35,6 @@ export default function Header() {
           <div className="flex items-center [&>*:not(:last-child)]:mr-[70px]">
             <Link href="/portfolio" className="!text-white text-[25px] hover:!text-gray-300 transition-colors no-underline">Portfolio</Link>
             <Link href="/about" className="!text-white text-[25px] hover:!text-gray-300 transition-colors no-underline">Acerca de mi</Link>
-            <a
-              href="https://www.instagram.com/chiara.model/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="!text-white hover:!text-gray-300 transition-colors no-underline"
-            >
-              <Instagram size={40} />
-            </a>
           </div>
         )}
 
@@ -83,15 +75,6 @@ export default function Header() {
               >
                 Acerca de mi
               </Link>
-              <a
-                href="https://www.instagram.com/chiara.model/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-3xl font-light hover:text-gray-300 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Instagram
-              </a>
             </div>
           </nav>
         </div>
