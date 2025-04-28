@@ -35,7 +35,6 @@ const PortfolioSection = ({ section }: { section: typeof sections[0] }) => (
       className="object-cover transition-transform duration-300 group-hover:scale-110"
     />
     <div className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-      <h2 className="text-white text-4xl font-bold">{section.title}</h2>
     </div>
   </Link>
 )
