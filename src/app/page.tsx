@@ -16,7 +16,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <div className="absolute top-[150px] md:left-[240px] left-[140px] -translate-x-1/2">
             <h1 className="text-[60px] md:text-[80px] font-bold mb-4">Chiara</h1>
-            <p className="text-[40px] md:text-[50px]">Modelo</p>
+            <p className="text-[40px] md:text-[50px]">Bailarina</p>
           </div>
         </div>
       </div>

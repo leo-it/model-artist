@@ -4,96 +4,109 @@ import { Instagram, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768)
     }
 
-    // Verificar al cargar
     checkScreenSize()
-
-    // Verificar al redimensionar
     window.addEventListener('resize', checkScreenSize)
-
-    // Limpiar el event listener
     return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 h-[110px] w-full bg-transparent z-50">
-      <nav className="h-full flex items-center justify-end px-8 md:mr-[70px]">
-        {/* Menú desktop */}
-        {!isMobile && (
-          <div className="flex items-center [&>*:not(:last-child)]:mr-[70px]">
-            <Link href="/" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Inicio</Link>
-            <Link href="/portfolio" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Portfolio</Link>
-            <Link href="/about" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Acerca de mi</Link>
-            <Link href="/contact" className="!text-white text-[40px] hover:!text-gray-300 transition-colors no-underline">Contacto</Link>
-            <a
-              href="https://www.instagram.com/chiara.model/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="!text-white hover:!text-gray-300 transition-colors no-underline"
-            >
-              <Instagram size={40} />
-            </a>
-          </div>
-        )}
-
-        {/* Botón menú para móvil */}
-        {isMobile && (
-          <button
-            className="text-white p-2 hover:bg-white/10 rounded-full transition-colors z-[100]"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={48} /> : <Menu size={48} />}
-          </button>
-        )}
-      </nav>
-
-      {/* Menú móvil */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-[50] bg-black">
-          <nav className="relative h-full flex flex-col items-center justify-center">
-            <div className="space-y-12 text-center flex flex-col">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm">
+      <nav className="max-w-[1200px] mx-auto px-4 py-4">
+        <div className="flex justify-between items-center">
+          <Link href="/" className="text-white text-xl font-light">
+            Chiara
+          </Link>
+          
+          {!isMobile && (
+            <div className="flex space-x-8">
               <Link 
                 href="/" 
-                className="text-white text-3xl font-light hover:text-gray-300 transition-colors"
+                className={`text-white hover:text-gray-300 transition-colors ${
+                  pathname === '/' ? 'font-bold' : 'font-light'
+                }`}
+              >
+                Inicio
+              </Link>
+              <Link 
+                href="/portfolio" 
+                className={`text-white hover:text-gray-300 transition-colors ${
+                  pathname === '/portfolio' ? 'font-bold' : 'font-light'
+                }`}
+              >
+                Portfolio
+              </Link>
+              <Link 
+                href="/about" 
+                className={`text-white hover:text-gray-300 transition-colors ${
+                  pathname === '/about' ? 'font-bold' : 'font-light'
+                }`}
+              >
+                Acerca de mí
+              </Link>
+              <a
+                href="https://www.instagram.com/chiari_in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 transition-colors"
+              >
+                <Instagram size={24} />
+              </a>
+            </div>
+          )}
+
+          {isMobile && (
+            <button
+              className="text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          )}
+        </div>
+      </nav>
+
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-[50] bg-black/95">
+          <nav className="relative h-full flex flex-col items-center justify-center">
+            <div className="space-y-8 text-center">
+              <Link 
+                href="/" 
+                className="text-white text-2xl font-light hover:text-gray-300 transition-colors block"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Inicio
               </Link>
               <Link 
                 href="/portfolio" 
-                className="text-white text-3xl font-light hover:text-gray-300 transition-colors"
+                className="text-white text-2xl font-light hover:text-gray-300 transition-colors block"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Portfolio
               </Link>
               <Link 
                 href="/about" 
-                className="text-white text-3xl font-light hover:text-gray-300 transition-colors"
+                className="text-white text-2xl font-light hover:text-gray-300 transition-colors block"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Acerca de mi
-              </Link>
-              <Link 
-                href="/contact" 
-                className="text-white text-3xl font-light hover:text-gray-300 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contacto
+                Acerca de mí
               </Link>
               <a
-                href="https://www.instagram.com/chiara.model/"
+                href="https://www.instagram.com/chiari_in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white text-3xl font-light hover:text-gray-300 transition-colors"
+                className="text-white text-2xl font-light hover:text-gray-300 transition-colors block"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Instagram

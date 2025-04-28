@@ -29,7 +29,7 @@ export default function PartnerPage() {
   const [selectedImage, setSelectedImage] = useState<typeof images[0] | null>(null)
 
   return (
-    <main className="h-full pt-24 p-4">
+    <div className="min-h-screen pt-24 p-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-[400px] max-w-[1200px] mx-auto grid-flow-dense">
         {images.map((image) => (
           <div
@@ -60,6 +60,6 @@ export default function PartnerPage() {
           alt={selectedImage.alt}
         />
       )}
-    </main>
+    </div>
   )
 } 
