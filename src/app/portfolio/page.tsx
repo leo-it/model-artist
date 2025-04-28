@@ -35,6 +35,11 @@ const PortfolioSection = ({ section }: { section: typeof sections[0] }) => (
       className="object-cover transition-transform duration-300 group-hover:scale-110"
     />
     <div className="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+      <div className="text-center">
+        <span className="text-white text-lg md:text-xl font-light border-b border-white/50 hover:border-white transition-colors">
+          Ver más
+        </span>
+      </div>
     </div>
   </Link>
 )
